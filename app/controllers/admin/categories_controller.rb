@@ -1,5 +1,7 @@
 class Admin::CategoriesController < ApplicationController
 
+  # before_filter :authorize for checking logged in
+
   def index
     @categories = Category.all
   end
