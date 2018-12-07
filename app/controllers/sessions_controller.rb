@@ -1,15 +1,15 @@
 class SessionsController < ApplicationController
 
   def create
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by_email(params[:session][:email])
 
-    if @user && @user.authenticate(params[:password])
+     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       redirect_to '/'
     else
       redirect_to '/login'
-      puts "failed"
     end
+
   end
 
   def destroy
@@ -18,3 +18,4 @@ class SessionsController < ApplicationController
   end
 
 end
+
