@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
       redirect_to '/login'
+      puts "failed"
     end
   end
 
