@@ -4,7 +4,9 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
-  <div class="order-summary jumbotron">
+  <h4>Order email: <%= @user_email %></h4>
+
+  <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -15,8 +17,8 @@
         </tr>
       </thead>
       <tbody>
-        <% enhanced_cart.each do |item| %>
-          <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+        <% @line_items.each do |item| %>
+          <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
         <% end %>
       </tbody>
       <tfoot>
@@ -25,12 +27,13 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= number_to_currency(@order.total_cents / 100) %>
           </th>
         </tr>
       </tfoot>
     </table>
   </div>
+
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
