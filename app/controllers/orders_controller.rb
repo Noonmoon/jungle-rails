@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @line_items = Order.find(params[:id]).line_items.all
     @user_email = Order.find(params[:id]).email
+    @id = params[:id]
+    UserMailer.order_email(@order, @id, @email).deliver_now
   end
 
   def create
