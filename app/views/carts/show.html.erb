@@ -1,4 +1,15 @@
 <section class="cart-show">
+<% if @cart == {} %>
+
+  <header class="page-header">
+    <h1>Looks like your cart is empty!</h1>
+  </header>
+
+  <div class="well">
+    <%= link_to 'Home', :products, class: 'btn btn-info' %>
+  </div>
+
+<% else %>
 
   <header class="page-header">
     <h1>My Cart</h1>
@@ -48,5 +59,6 @@
       <% end %>
     </div>
   </div>
+<% end %>
 
 </section>
