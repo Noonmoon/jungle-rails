@@ -49,14 +49,11 @@
 
   <div class="col-sm-8">
   <% @reviews.each do |review| %>
-    <% puts review.id %>
     <% @user = User.find_by_id(review.user_id) %>
     <%= render 'review', user: @user, description: review.description, rating: review.rating %>
+
     <% if review.user_id == session[:user_id] %>
-    <%= link_to 'Delete Review',
-                   product_review_path(@product, review),
-                   method: :delete,
-                   data: { confirm: 'Are you sure?' } %>
+    <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   <% end %>
   </div>

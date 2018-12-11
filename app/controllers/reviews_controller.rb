@@ -11,11 +11,12 @@ class ReviewsController < ApplicationController
       :description => review_params[:description],
       :rating => review_params[:rating]
     }
+
     @review = Review.new(@review_hash)
     if @review.save
       redirect_to "/products/#{params[:product_id]}", notice: 'Review created!'
     else
-      render @product
+      redirect_to "/products/#{params[:product_id]}"
     end
   end
 
@@ -35,4 +36,5 @@ class ReviewsController < ApplicationController
       :rating
     )
   end
+
 end

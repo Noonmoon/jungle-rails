@@ -7,4 +7,5 @@ class UserMailer < ApplicationMailer
     mail to: email,
          subject: "Order Number: #{id}"
   end
+
 end
