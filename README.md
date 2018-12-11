@@ -1,7 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
+A mini e-commerce application built with Rails 4.2 
 
 ## Setup
 
@@ -13,7 +12,12 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 6. Create .env file based on .env.example
 7. Sign up for a Stripe account
 8. Put Stripe (test) keys into appropriate .env vars
-9. Run `bin/rails s -b 0.0.0.0` to start the server
+9. Create secrets.yml file in config
+10. Enter appropriate information into secrets.yml 
+    ex. development:
+            secret_token: "your_token"
+            secret_key_base: "your key"
+11. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## Stripe Testing
 
@@ -23,6 +27,12 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* Rails 4.2 
 * PostgreSQL 9.x
 * Stripe
+
+## Screenshots
+
+![Main page](https://github.com/Noonmoon/jungle-rails/blob/master/docs/Screen%20Shot%202018-12-11%20at%202.11.11%20PM.png?raw=true)
+![Order receipt](https://github.com/Noonmoon/jungle-rails/blob/master/docs/Screen%20Shot%202018-12-11%20at%202.12.44%20PM.png?raw=true)
+![Reviews example](https://github.com/Noonmoon/jungle-rails/blob/master/docs/Screen%20Shot%202018-12-11%20at%202.13.27%20PM.png?raw=true)
