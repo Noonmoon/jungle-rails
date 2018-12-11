@@ -1,19 +1,11 @@
-<tr>
-  <td>
-    <%= image_tag product.image.tiny %>
-  </td>
-  <td>
-    <h4><%= product.name %></h4>
-    <br>
-    <p><%= product.description %></p>
-  </td>
-  <td>
-    <%= number_to_currency(product.price_cents / 100.00) %>
-  </td>
-  <td>
-    <%= quantity %>
-  </td>
-  <td>
-    <%= number_to_currency(quantity * product.price_cents / 100) %>
-  </td>
-</tr>
+<%= image_tag product.image.tiny %>
+<br>
+<h4><%= product.name %></h4>
+<br>
+<p><%= product.description %></p>
+<br>
+<h4>Price: <%= number_to_currency(product.price_cents / 100.00) %></h4>
+<br>
+<h4>Quantity: <%= quantity %></h4>
+<br>
+<h4>Total: <%= number_to_currency(quantity * product.price_cents / 100) %></h4>

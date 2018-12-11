@@ -3,9 +3,14 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @line_items = Order.find(params[:id]).line_items.all
-    @user_email = Order.find(params[:id]).email
     @id = params[:id]
-    UserMailer.order_email(@order, @id, @email).deliver_now
+    @user_email = ''
+
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @user_email = @user.email
+      UserMailer.order_email(@order, @id, @user_email).deliver_now
+    end
   end
 
   def create
