@@ -132,15 +132,5 @@ cat3.products.create!({
   price: 2_483.75
 })
 
-## REVIEWS
-
-Review.destroy_all
-
-ReviewEX = Review.find_or_create_by!({
-  product_id: 1,
-  user_id: 1,
-  description: 'this is pretty good',
-  rating: 1
-})
 
 puts "DONE!"

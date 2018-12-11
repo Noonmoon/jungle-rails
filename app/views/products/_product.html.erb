@@ -25,4 +25,20 @@
         SOLD OUT!
     </aside>
   <% end %>
+
+  <% reviews = product.reviews.all %>
+  <% ratings = [] %>
+  <% reviews.each do |review| %>
+  <% ratings.push(review.rating) %>
+  <% end %>
+  <% avg = ratings.inject{ |sum, el| sum + el }.to_f / ratings.size %>
+  <% if !avg.nan? %>
+    <aside class="rating">
+      <%= "#{avg}/10" %>
+    </aside>
+  <% else %>
+    <aside class="rating">
+      No ratings
+    </aside>
+  <% end %>
 </article>

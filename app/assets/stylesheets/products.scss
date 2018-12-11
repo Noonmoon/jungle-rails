@@ -51,7 +51,18 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
-       aside.out {
+      aside.rating {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        padding: 10px;
+        background-color: #eee;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        font-size: 0.8em;
+      }
+
+      aside.out {
         position: absolute;
         top: 0;
         left: 0;
