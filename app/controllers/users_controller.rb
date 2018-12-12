@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      puts "stuff", @user.id
       session[:user_id] = @user.id
       redirect_to '/'
     else
@@ -21,7 +22,8 @@ class UsersController < ApplicationController
       :last_name,
       :email,
       :password,
-      :password_confirmation)
+      :password_confirmation
+      )
   end
 
 end
